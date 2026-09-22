@@ -1,0 +1,3 @@
+# Raw screen recordings — may contain private windows; only processed clips in assets/ are published
+*.mov
+.DS_Store

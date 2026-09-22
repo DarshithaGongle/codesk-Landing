@@ -4,6 +4,15 @@
 support for an entire company — Codesk drafts every reply, a human approves
 it, nothing goes out without sign-off.
 
+<a href="assets/codesk-walkthrough.mp4">
+  <img src="assets/walkthrough-thumbnail.png" alt="Play the 55-second Codesk walkthrough: inbox, AI draft review with source citations, approve and send" width="100%">
+</a>
+
+<sub>▶ **55-second walkthrough** — inbox triage, reviewing an AI draft with
+cited sources, editing, approving, and the GitHub connection screen.
+Recorded from the running app against a demo workspace with seeded,
+fictional customers.</sub>
+
 ---
 
 ## The problem
@@ -17,22 +26,66 @@ actually does.
 
 ## How it works
 
-1. **Connect your GitHub repo** (read-only OAuth) — Codesk ingests and chunks
-   your codebase and docs into a searchable knowledge base.
-2. **A customer emails support** — an inbound webhook turns it into a ticket
-   automatically, no manual entry.
-3. **Codesk drafts a reply** — the ticket is embedded, matched against your
-   codebase via vector similarity search, classified by type, and handed to
-   Claude to draft a reply grounded in cited source files and line ranges.
-4. **A human reviews it** — the original email and the AI draft sit side by
-   side. Approve, edit, or reject in one click. Every citation is visible and
-   traceable back to the exact file/lines it came from.
-5. **The reply sends** — only after approval. The ticket moves through a
-   clear lifecycle (`open → pending_review → sent → resolved`) so nothing
-   falls through the cracks.
+### 1. Connect your GitHub repo
 
-**Nothing sends without a human in the loop. That's a permanent design
-constraint, not a v1 limitation.**
+Read-only OAuth. Codesk ingests and chunks your codebase and docs into a
+searchable knowledge base. The same settings page gives you an inbound
+address to forward your support email to, and lets you set the reply-to
+address customers see.
+
+<img src="assets/settings-github-connect.png" alt="Settings page with the Connect GitHub repo button and inbound email forwarding address" width="100%">
+
+### 2. A customer emails support
+
+An inbound webhook turns each email into a ticket automatically — no manual
+entry. Every ticket is classified by type (bug, how-to, feature request) and
+tracked by status, so the inbox shows what needs attention at a glance.
+
+<img src="assets/inbox-all-tickets.png" alt="All tickets view showing seven tickets with type tags (Bug, How-to, Feature request) and statuses (Open, Awaiting Reply, Approved, Sent, Resolved)" width="100%">
+
+### 3. Codesk drafts a reply
+
+The ticket is embedded, matched against your codebase via vector similarity
+search, and handed to Claude to draft a reply grounded in what it found.
+Every draft lists the exact source files and line ranges it drew on, with a
+match score for each, so the reviewer can check the answer against the code
+instead of taking it on trust.
+
+<img src="assets/draft-review.png" alt="Ticket detail: the customer's original email on the left, the AI draft reply on the right, with sources src/webhooks/signature.util.ts lines 14–32 and CHANGELOG.md lines 5–18 listed underneath" width="100%">
+
+### 4. A human reviews it
+
+The original email and the AI draft sit side by side. **Approve & send**,
+**Edit draft**, or **Reject** — one click each. Tickets that shouldn't get
+an AI answer can be handled with a plain manual reply instead.
+
+<img src="assets/draft-review.gif" alt="Opening a pending ticket, editing the AI draft, then approving it — the ticket leaves the pending-review queue" width="100%">
+
+### 5. The reply sends
+
+Only after approval. Tickets move through a clear lifecycle — open, pending
+review, approved, sent, resolved — so nothing falls through the cracks, and
+**Sent today** shows everything that went out.
+
+<img src="assets/inbox-sent-today.png" alt="Sent today view listing one sent how-to ticket" width="100%">
+
+> **Nothing sends without a human in the loop. That's a permanent design
+> constraint, not a v1 limitation.**
+
+<details>
+<summary>Sign-up and sign-in</summary>
+<br>
+
+A workspace is one form: company name, your name, work email, password.
+
+<table>
+  <tr>
+    <td><img src="assets/register.png" alt="Create your account form"></td>
+    <td><img src="assets/login.png" alt="Sign in form"></td>
+  </tr>
+</table>
+
+</details>
 
 ## Under the hood
 
@@ -49,20 +102,6 @@ constraint, not a v1 limitation.**
 Multi-tenant from the ground up — every table is scoped by tenant first, not
 derived through joins, so one customer's data is never reachable from
 another's session.
-
-## See it in action
-
-> 🎥 Demo videos coming soon. Planned:
-> 1. **2-minute onboarding** — GitHub repo connected to first AI-drafted
->    reply, timed live.
-> 2. **Draft review & approval** — the side-by-side review UI, citations,
->    and the 3-click-or-fewer approval flow.
-> 3. **End-to-end** — a real inbound email triggering ticket creation, draft
->    generation, human approval, and the outbound reply landing in an inbox.
-
-## Screenshots
-
-> 📸 Coming soon — inbox view, draft review screen, settings/onboarding.
 
 ## Who it's for
 
@@ -87,7 +126,5 @@ up more broadly.
 The codebase is private while we build with early customers — this repo is
 just the front door. If you want early access, a demo, or want to talk about
 how it's built, reach out:
-
-
 
 **darshithagongle@gmail.com**
