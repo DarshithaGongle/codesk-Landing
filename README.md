@@ -5,9 +5,7 @@ and docs, drafts a reply to every support ticket, and shows you exactly which
 files it used. You review, edit if needed, and approve. One person can run
 support for the whole company.
 
-<sub>Screens below are from the running app, using a demo workspace for a
-fictional company ("Pulse") with seeded, fictional customers. Development-mode
-overlays were cropped out.</sub>
+
 
 ---
 
