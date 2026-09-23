@@ -196,8 +196,7 @@ Early design partners get founder pricing.
 ## Team
 
 - **Chetan** (backend)
-- **Darshitha** (frontend)
-- **Tejaswini** (product and full-stack)
+- **Darshitha** (product and frontend)
 
 ## Interested?
 
