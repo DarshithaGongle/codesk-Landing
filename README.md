@@ -4,14 +4,8 @@
 support for an entire company — Codesk drafts every reply, a human approves
 it, nothing goes out without sign-off.
 
-<a href="assets/codesk-walkthrough.mp4">
-  <img src="assets/walkthrough-thumbnail.png" alt="Play the 55-second Codesk walkthrough: inbox, AI draft review with source citations, approve and send" width="100%">
-</a>
-
-<sub>▶ **55-second walkthrough** — inbox triage, reviewing an AI draft with
-cited sources, editing, approving, and the GitHub connection screen.
-Recorded from the running app against a demo workspace with seeded,
-fictional customers.</sub>
+<sub>Screens below are from the running app, using a demo workspace with
+seeded, fictional customers.</sub>
 
 ---
 
